@@ -1,0 +1,67 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
+.contenedor{
+    
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(./../images/mujer.jpg);
+    overflow: hidden;
+
+}
+.contenedor2{
+    background-color: steelblue;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.login_registro{
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(./../images/pc\ \(2\).jpg);
+    overflow: hidden;
+
+
+}
+.registro_mensaje{
+    color: #f2f2f2;
+}
+.mar{
+    margin:20px  20px;
+}
+.contenedor3{
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 0px 0.6px;
+    width: 90vw;
+    margin: auto;
+    height: 100%;
+    margin-bottom: 30px;
+  
+}
+
+.btn{
+    display: inline-block;
+    justify-content: space-evenly;
+}
+.card{
+    margin: 20px;
+}
+.error{
+    color: red; 
+    display: flex;
+    justify-content: center;
+    position : center;
+    background-color: hsl(207, 73%, 33%);
+    width: 200px;
+    margin: auto;
+}

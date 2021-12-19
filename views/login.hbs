@@ -1,0 +1,20 @@
+<div class="container login_registro">
+    <div class="row">
+        <div class="col-8">
+            <form action="/login" method="post">
+            <div class="form-group">
+                <label for="user">nombre de usuario:</label>
+                <input  class="form-control" type="text" name="username" placeholder="username">
+                <label for="pass">Contraseña</label>
+                <input  class="form-control" type="password" name="password" placeholder="password">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+            </form>
+            
+        </div>
+    </div>
+    <h6 class="registro_mensaje">no tienes cuenta?<a href="/registro"> registrate</a></h6>
+</div>
+
+<p class="error">{{message}}</p>
+

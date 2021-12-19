@@ -1,0 +1,50 @@
+{{#if status}}
+<h2><a class="btn btn-primary" href="/perfilAdmin/disabled">ver empleados deshabilitados</a></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">nombre de usuario</th>
+      <th scope="col">id</th>
+      <th scope="col">ver solo</th>
+      <th scope="col">eliminar</th>
+      <td scope="col">modificar</td>
+      
+    </tr>
+  </thead>
+    
+  <tbody>
+       {{#each usuarios}}
+    <tr>
+      <td>{{username}}</td>
+      <td>{{id}}</td>
+      <td><a href="/perfilAdmin/single/{{id}}">single</a></td>
+      <td><a href="/perfilAdmin/delete/{{id}}">eliminar</a></td>
+      <td><a href="/perfilAdmin/update/{{id}}">modificar</a></td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+{{else}}
+<h2><a class="btn btn-primary" href="/perfilAdmin">ver empleados habilitados</a></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">nombre de usuario</th>
+      <th scope="col">id</th>
+      <th scope="col">habilitar</th>
+      
+    </tr>
+  </thead>
+    
+  <tbody>
+       {{#each deshabilitados}}
+    <tr>
+      <td>{{username}}</td>
+      <td>{{id}}</td>
+      <td><a href="/perfilAdmin/disabled/{{id}}">habilitar</a></td>
+    </tr>
+      {{/each}}
+  </tbody>
+</table>
+{{/if}}
