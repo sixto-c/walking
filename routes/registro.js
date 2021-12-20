@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const sha1 = require('sha1');
-const {registro} = require('../models/cursos');
+const {registro, auth} = require('../models/cursos');
 
 const create = async(req, res)=>{
     req.body.pass = sha1(req.body.pass);
@@ -9,7 +9,12 @@ const create = async(req, res)=>{
     console.log(obj);
     const newUser = await registro(obj);
     console.log(newUser);
-    res.redirect('/');
+    var result = await auth(obj);
+    console.log(result);
+    const [{id, admin}] = result;
+    console.log(id, admin);
+    req.session.idUser = id;
+    res.redirect('/cursos');
 }
 const getRegistro = async(req,res)=>{
     res.render('registro');

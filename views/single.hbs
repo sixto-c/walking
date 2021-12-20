@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+    <th scope="col">matricula unica de alumno</th>
+    <th scope="col">nombre del alumno</th>
+    <th scope="col">nombre de la carrera</th>
+    <th scope="col">ver cursos tomados</th>
+     
+    </tr>
+  </thead>
+   
+  <tbody>
+     {{#each usuario}}
+    <tr>
+        <td>{{matricula}}</td>
+        <td>{{nombre}}</td>
+      <td>{{nom_carrera}}</td>
+      <td><a class="btn btn-primary" href="/perfilAdmin/materias/{{matricula}}">ver materias tomadas</a></td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+   
+
+</table>

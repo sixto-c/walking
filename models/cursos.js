@@ -2,7 +2,7 @@ const pool = require("./../utils/cursos");
 const TABLA_ALUMNO = "alumno";
 const TABLA_USUARIOS = "usuarios";
 const TABLA_ALUMNO_MATERIA = "alumno_materia";
-const TABLA_CARRERAS = "carrera";
+const TABLA_CARRERA = "carrera";
 const TABLA_MATERIAS = "materias";
 
 
@@ -30,5 +30,49 @@ const auth = async({user, pass})=>{
 }
 
 
+//funciones para administradores
+const getUser = async(habilitado)=>{
+    try{
+        const query = "SELECT id, user FROM ?? WHERE habilitado = ?";
+        const params = [TABLA_USUARIOS, habilitado];
+        return await pool.query(query, params);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+const getAlumno = async()=>{
+    try{
+        const query = "SELECT alu.* FROM ??  as alu";
+        const params = [TABLA_ALUMNO];
+        return await pool.query(query, params);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 
-module.exports= {registro, auth};
+const alumnoSingle = async(matricula)=>{
+    try{
+        const query = "SELECT alu.matricula, alu.nombre, car.nom_carrera FROM ?? AS car JOIN ?? as alu ON nro_carrera = no_carrera AND alu.matricula = ? ";
+        const params = [TABLA_CARRERA, TABLA_ALUMNO, matricula];
+        return await pool.query(query, params);
+    }catch(e){
+        console.log(e);
+    }
+}
+
+
+const getMaterias = async(matricula)=>{
+    try{
+        const query = "SELECT materia FROM ?? JOIN ?? ON num_materia = id_nroMateria AND id_matricula = ?";
+        const params = [TABLA_MATERIAS, TABLA_ALUMNO_MATERIA, matricula];
+        return await pool.query(query, params);
+    }catch(e){
+        console.log(e);
+    }
+}
+
+
+
+module.exports= {registro, auth, getUser, getAlumno, alumnoSingle, getMaterias};

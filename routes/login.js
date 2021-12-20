@@ -26,11 +26,11 @@ const login = async(req, res)=>{
         if(result.length != 0 && req.session.admin  === 1){
             
           
-            res.redirect('/cursos');
+            res.redirect('/perfilAdmin');
     
         }
         else if(result.length != 0 && req.session.admin === 0){
-            res.redirect('/'); 
+            res.redirect('/cursos'); 
            }
    
      }catch(e){

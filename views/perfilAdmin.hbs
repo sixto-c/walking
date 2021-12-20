@@ -1,0 +1,22 @@
+<a class="btn btn-primary" href="/perfilAdmin/alumnos">ver alumnos</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+     
+    </tr>
+  </thead>
+   
+  <tbody>
+     {{#each usuarios}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{user}}</td>
+    </tr>
+
+    {{/each}}
+  </tbody>
+   
+
+</table>

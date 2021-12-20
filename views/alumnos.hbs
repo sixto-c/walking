@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">matricula</th>
+      <th scope="col">nombre</th>
+      <th scope="col">dirrección</th>
+      <th scope="col">telefono</th>
+     <th scope="col">numero de carrera</th>
+     <th scope="col">ver single</th>
+
+     
+    </tr>
+  </thead>
+   
+  <tbody>
+     {{#each alumnos}}
+    <tr>
+      <td>{{matricula}}</td>
+      <td>{{nombre}}</td>
+      <td>{{direccion}}</td>
+      <td>{{telefono}}</td>
+      <td>{{no_carrera}}</td>
+      <td><a href="/perfilAdmin/single/{{matricula}}">ver single</a></td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+   
+
+</table>
