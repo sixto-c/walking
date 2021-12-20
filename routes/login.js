@@ -13,24 +13,28 @@ const login = async(req, res)=>{
     console.log(obj);
     var result = await auth(obj);
     console.log(result);
-    if(result.length === 0){
-        res.render('login', {message : 'user o pass incorrectas'});
-    }
+    try{
+        if(result.length === 0){
+            res.render('login', {message : 'user o pass incorrectas'});
+        }
     
-    const [{id, admin}] = result;
-    console.log(id, admin);
-    req.session.idUser = id;
-    req.session.admin = admin;
-
-    if(result.length != 0 && req.session.admin  === 1){
-        
-      
-        res.redirect('/cursos');
-
-    }
-    else if(result.length != 0 && req.session.admin === 0){
-
-        res.redirect('/'); 
+        const [{id, admin}] = result;
+        console.log(id, admin);
+        req.session.idUser = id;
+        req.session.admin = admin;
+    
+        if(result.length != 0 && req.session.admin  === 1){
+            
+          
+            res.redirect('/cursos');
+    
+        }
+        else if(result.length != 0 && req.session.admin === 0){
+            res.redirect('/'); 
+           }
+   
+     }catch(e){
+        console.log(e);
     }
 
    
