@@ -73,6 +73,39 @@ const getMaterias = async(matricula)=>{
     }
 }
 
+const reclutarse = async(obj)=>{
+   try{
+    const query = "INSERT INTO ?? SET ?";
+    const params = [TABLA_ALUMNO, obj];
+    return await pool.query(query, params);
+   }catch(e){
+       console.log(e);
+   }
+    
+}
+
+const getNumCarrera = async()=>{
+    try{
+        const query = "SELECT nom_carrera, nro_carrera FROM ??";
+        const params = [TABLA_CARRERA];
+        return await pool.query(query, params);
+
+    }catch(e){
+        console.log(e);
+    }
+} 
+
+const materias = async()=>{
+   try{
+    const query = "SELECT materia FROM ??";
+    const params = [TABLA_MATERIAS];
+    return await pool.query(query, params);
+   } catch(e){
+       console.log(e)
+   }
+    
+
+}
 
 
-module.exports= {registro, auth, getUser, getAlumno, alumnoSingle, getMaterias};
+module.exports= {registro, auth, getUser, getAlumno, alumnoSingle, getMaterias, reclutarse, getNumCarrera, materias};

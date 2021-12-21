@@ -1,0 +1,23 @@
+<div class="container login_registro">
+    <div class="row">
+        <div class="col-8">
+            <form action="/cursos/apuntarse" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input  class="form-control" type="text" name="nombre" placeholder="nombre de usuario">
+                <label for="apellido">dirección:</label>
+                <input  class="form-control" type="text" name="direccion" placeholder="direccion">
+                <label for="apellido">teléfono:</label>
+                <input  class="form-control" type="text" name="telefono" placeholder="telefono">
+                <label for="apellido">seleccione su carrrera:</label>
+                <select class="form-select" name="no_carrera">
+                    {{#each numCarreras}}
+                    <option value="{{nro_carrera}}" >{{nom_carrera}}</option>
+                   {{/each}}
+                </select>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
