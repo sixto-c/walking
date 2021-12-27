@@ -1,0 +1,17 @@
+<div class="container login_registro">
+    <div class="row">
+        <div class="col-8">
+            <form action="/cursos/takeCourse" method="post">
+            <div class="form-group">
+                <label for="id_nroMateria">seleccione su materia:</label>
+                <select class="form-select" name="id_nroMateria">
+                    {{#each mat}}
+                    <option value="{{num_materia}}" >{{materia}}</option>
+                   {{/each}}
+                </select>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

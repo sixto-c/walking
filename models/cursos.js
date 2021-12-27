@@ -108,4 +108,22 @@ const materias = async()=>{
 }
 
 
-module.exports= {registro, auth, getUser, getAlumno, alumnoSingle, getMaterias, reclutarse, getNumCarrera, materias};
+//anotarse a materia como alumno
+const create_alu = async(obj) =>{
+    try{
+        const query = "INSERT INTO ?? SET ? WHERE matricula = req.session.matricula";
+        const params = [TABLA_ALUMNO_MATERIA, obj];
+        return await pool.query(query, params);
+    
+    }catch(e){
+        console.log(e);
+    }
+
+   
+
+}
+
+
+
+
+module.exports= {registro, auth, getUser, getAlumno, alumnoSingle, getMaterias, reclutarse, getNumCarrera, materias, create_alu};
